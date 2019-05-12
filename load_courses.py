@@ -13,22 +13,22 @@ class Classes:
         args = self.parse()
         self.run(args)
 
-    def run(self,args):
+    def run(self,courses,clusters):
         """
 
         :param args: args.courses = list of courses id's || and args.clusters = list of lists of courses
         :return: (self.courses,self.clusters)
         """
-        if args.courses:
-            for course in args.courses:
+        if len(courses)>0:
+            for course in courses:
                 self.courses.append(self.deserializeJson(course))
             i=1
             for course in self.courses:
                 print("loads_courses.py: COURSE HERE (number: " + str (i) + ")""  Course Info:  " + str(course))
                 i=i+1
         cluster_id = 0
-        if len(args.cluster)>0:
-            for cluster in args.cluster:
+        if len(clusters)>0:
+            for cluster in clusters:
                 cluster_id+=1
                 new_cluster=Cluster(cluster_id,[])
                 for course in cluster:

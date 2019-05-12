@@ -175,19 +175,20 @@ class Objective():
     def specific_lecturers(self):
         score =0
         lecturer_perfs =[]
-        for item in Objective.lecturers:
-            lecturer_perfs.append(Utils.string_to_int_tuple(item))
-        for t in lecturer_perfs:
-            c_id,c_type,name=t
-            for lesson in self.solution.lectures:
-                if c_id == lesson.c_id and c_type == lesson.type.strip():
-                    if len(name.split(' ')) >= 3:
-                        if name.split(' ')[1] != lesson.lecturer.split(' ')[1] and name.split(' ')[2] != lesson.lecturer.split(' ')[2]:
-                            score += 1
-                            print(str(c_id) + ' lecturer preference was not met: wanted for ' + c_type + ' ' + name + ' and got ' + lesson.lecturer)
-                    elif name.strip() != lesson.lecturer.strip():
-                        score+=1
-                        print (str(c_id) + ' lecturer preference was not met: wanted for '+ c_type+' '+ name + ' and got ' + lesson.lecturer)
+        for lecterur in lesson.lecturer:
+            for item in Objective.lecturers:
+                lecturer_perfs.append(Utils.string_to_int_tuple(item))
+            for t in lecturer_perfs:
+                c_id,c_type,name=t
+                for lesson in self.solution.lectures:
+                    if c_id == lesson.c_id and c_type == lesson.type.strip():
+                        if len(name.split(' ')) >= 3:
+                            if name.split(' ')[1] != lecterur.split(' ')[1] and name.split(' ')[2] != lecterur.split(' ')[2]:
+                                score += 1
+                                print(str(c_id) + ' lecturer preference was not met: wanted for ' + c_type + ' ' + name + ' and got ' + lesson.lecturer)
+                        elif name.strip() != lecterur.strip():
+                            score+=1
+                            print (str(c_id) + ' lecturer preference was not met: wanted for '+ c_type+' '+ name + ' and got ' + lesson.lecturer)
         print('specific_lecturers score = ' + str(score))
         return score
 

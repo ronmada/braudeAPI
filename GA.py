@@ -3,9 +3,6 @@ import datetime
 import time
 ts = time.time()
 st = datetime.datetime.fromtimestamp(ts).strftime('%Y %m %d %H %M %S')
-import logging
-logging.basicConfig(filename='generations ' + str(st) + '.log', filemode='w',
-                    format=u"%(message)s",level=logging.INFO)
 from GADS import Course,Course_Group,Kita,Lect,Cluster
 import load_courses
 from prettytable import PrettyTable
@@ -54,7 +51,6 @@ class GA:
             self.mutation()
             self.document_generation_fitness()
 
-        self.workbook.close()
     def selection(self):
         survivors = []
         self.curent_generation.sort(key=lambda x: x.score)
@@ -79,7 +75,6 @@ class GA:
                 # can add second baby and make them fight over survival
                 self.curent_generation[replacment_counter] = first_baby
                 replacment_counter+=1
-        logging.info('amount of crossovers = '+str(replacment_counter))
         print('amount of crossovers = '+str(replacment_counter))
 
     def mutation(self):
@@ -104,9 +99,7 @@ class GA:
 
     def document_generation_fitness(self):
 
-        worksheet = self.workbook.add_worksheet(str(len(self.fitness_history)))
         fitness_scores=[]
-        logging.info('Generation #'+str(len(self.fitness_history)))
         for solution in self.curent_generation:
             solution.score = solution.objective.evaluation()
 
@@ -115,31 +108,40 @@ class GA:
         i = 0
         for solution in self.curent_generation:
             fitness_scores.append(solution.score)
-            logging.info(str(solution.objective.string_fitness_paramenters()).encode(encoding='UTF-8'))
             print(str(solution.objective.string_fitness_paramenters()))
-            solution.ecxel_table(i,worksheet)
             i+=14
         fitness_scores.sort()
         self.fitness_history.append(fitness_scores)
         print (self.fitness_history)
 
 
-if __name__ == "__main__":
+def run(courses,clusters,specific_windows,specific_days_off,lecturers):
+    """
+    example run(['11231','61992','11102'],[['61958', '11102'],['61963','61964','61965']],['(0,2)', '(1,2)', '(2,2)', '(3,2)', '(4,2)'],['0', '2', '4'],['(11102,practice,"דר אדר רון")'])
 
-    logging.info('GA')
-
-
-    # setup start
-    args = Utils.parse()
-    TableObjective.specific_windows = args.specific_windows
-    TableObjective.specific_free_days = args.specific_days_off
-    TableObjective.lecturers = args.lecturer
-    courses, clusters = load_courses.Classes().run(args)
+    :param courses: list of course ids in strings
+    :param clusters: lists of lists (clusters) of course id's as strings
+    :param specific_windows: list of tuples as strings. for each specific window : (day,period) like so (0,0) means: (yum aleph, 8:30-9:30)') as a string
+    :param specific_days_off: list of ints as strings , for each specific day off add: day1 day2... like so -specific_days_off [0,4]
+    :param lecturers: list of tuples as strings, add specific prefered lecturer to a courses lectuer  (c_id,lect lype, name)
+                             like so (61132,practice,"שגיא אריאלי"), this should only be used for courses and not clusters)
+    :return:
+    """
+    TableObjective.specific_windows = specific_windows
+    TableObjective.specific_free_days = specific_days_off
+    TableObjective.lecturers = lecturers
+    courses, clusters = load_courses.Classes().run(courses,clusters)
     structure = courses + clusters
 
     TableSolution.structure = structure
     # setup end
 
-
     genetic_algo = GA(TableSolution, TableObjective, 30, 50, 0.5, 0)
     genetic_algo.start()
+
+
+if __name__ == "__main__":
+    args = Utils.parse()
+    run(args.courses,args.cluster,args.specific_windows,args.specific_days_off,args.lecturer)
+    #run(['11231','61992','11102'],[['61958', '11102'],['61963','61964','61965']],['(0,2)', '(1,2)', '(2,2)', '(3,2)', '(4,2)'],['0', '2', '4'],['(11102,practice,"דר אדר רון")'])
+
