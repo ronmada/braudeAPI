@@ -266,6 +266,28 @@ def decodejson(self,courseobj):
     deserialized = json.loads(serialized, object_hook=decode_object)
     return deserialized
 
+
+api.add_resource(Start_GA)
+class Start_GA(resource):
+    #def get(self,courses,clusters,specific_windows,specific_days_off,lecturers):
+    """
+    example run(['11231','61992','11102'],[['61958', '11102'],['61963','61964','61965']],['(0,2)', '(1,2)', '(2,2)', '(3,2)', '(4,2)'],['0', '2', '4'],['(11102,practice,"דר אדר רון")'])
+
+    :param courses: list of course ids in strings
+    :param clusters: lists of lists (clusters) of course id's as strings
+    :param specific_windows: list of tuples as strings. for each specific window : (day,period) like so (0,0) means: (yum aleph, 8:30-9:30)') as a string
+    :param specific_days_off: list of ints as strings , for each specific day off add: day1 day2... like so -specific_days_off [0,4]
+    :param lecturers: list of tuples as strings, add specific prefered lecturer to a courses lectuer  (c_id,lect lype, name)
+                             like so (61132,practice,"שגיא אריאלי"), this should only be used for courses and not clusters)
+    :return:
+    """
+    # GA.run(courses,clusters,specific_windows,specific_days_off,lecturers)
+
+
+    def get(self):
+        run(['11231','61992','11102'],[['61958', '11102'],['61963','61964','61965']],['(0,2)', '(1,2)', '(2,2)', '(3,2)', '(4,2)'],['0', '2', '4'],['(11102,practice,"דר אדר רון")'])
+
+
 def decode_object(o):
     if '__Course__' in o:
         a = Course( 0, "fifi", [])
