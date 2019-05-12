@@ -3,6 +3,7 @@ from flask_restful import Resource, Api, reqparse, abort
 import pymongo
 import bson.json_util
 import json, copy, ast, sys
+import GA
 from GADS import Cluster,Course,Course_Group,Kita,Lect
 
 
@@ -285,7 +286,7 @@ class Start_GA(Resource):
 
 
     def get(self):
-        run(['11231','61992','11102'],[['61958', '11102'],['61963','61964','61965']],['(0,2)', '(1,2)', '(2,2)', '(3,2)', '(4,2)'],['0', '2', '4'],['(11102,practice,"דר אדר רון")'])
+        GA.run(['11231','61992','11102'],[['61958', '11102'],['61963','61964','61965']],['(0,2)', '(1,2)', '(2,2)', '(3,2)', '(4,2)'],['0', '2', '4'],['(11102,practice,"דר אדר רון")'])
         return ('ok')
 
 api.add_resource(Start_GA, '/start_ga')
