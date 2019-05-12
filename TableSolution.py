@@ -7,7 +7,6 @@ import datetime
 import Utils
 from AbsGAClasses import Solution
 from TableObjective import TableObjective
-import xlsxwriter
 
 
 class TableSolution(Solution):

@@ -6,7 +6,6 @@ st = datetime.datetime.fromtimestamp(ts).strftime('%Y %m %d %H %M %S')
 import logging
 logging.basicConfig(filename='generations ' + str(st) + '.log', filemode='w',
                     format=u"%(message)s",level=logging.INFO)
-import xlsxwriter
 from GADS import Course,Course_Group,Kita,Lect,Cluster
 import load_courses
 from prettytable import PrettyTable
@@ -34,7 +33,6 @@ class GA:
 
 
     def __init__(self,create_solution_method,create_objective_method,generation_size,number_of_generations,mutation_rate,crossover_rate):
-        self.workbook = xlsxwriter.Workbook('lessons.xlsx')
         self.create_solution_method=create_solution_method
         self.create_objective_method=create_objective_method
         self.generation_size = generation_size
