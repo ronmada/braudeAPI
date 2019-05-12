@@ -108,7 +108,7 @@ class GA:
         i = 0
         for solution in self.curent_generation:
             fitness_scores.append(solution.score)
-            print(str(solution.objective.string_fitness_paramenters()))
+            #print(str(solution.objective.string_fitness_paramenters()))
             i+=14
         fitness_scores.sort()
         self.fitness_history.append(fitness_scores)
@@ -138,7 +138,7 @@ def run(courses,clusters,specific_windows,specific_days_off,lecturers):
 
     genetic_algo = GA(TableSolution, TableObjective, 30, 50, 0.5, 0)
     genetic_algo.start()
-
+    return (genetic_algo.curent_generation[genetic_algo.generation_size-1].string_table())
 
 if __name__ == "__main__":
     args = Utils.parse()

@@ -3,8 +3,9 @@ from flask_restful import Resource, Api, reqparse, abort
 import pymongo
 import bson.json_util
 import json, copy, ast, sys
-import GA
+from GA import run
 from GADS import Cluster,Course,Course_Group,Kita,Lect
+from load_courses import findCourse, decodejson
 
 
 # to run app from POWERSHELL:
@@ -250,22 +251,7 @@ class getCourse_(Resource):
 api.add_resource(getCourse_, '/getcorga/<course_id>')
 
 
-def findCourse(course_id):
-    doc_count = int(mycorcl.count_documents({"__Course__.id": course_id}))
-    print("Docs found:" + str(doc_count))
-    if int(doc_count) > 1:
-        print("course_id {} appears more than once on DB".format(course_id))
-        abort(1, message="course_id {} appears more than once on DB".format(course_id))
-    elif doc_count == 0:
-        print("Course ID: " + str(course_id) + " doesn't exist")
-        abort(404, message="Course ID: {} doesn't exist".format(course_id))
-    course = mycorcl.find_one({"__Course__.id" : course_id}, {"_id": 0})
-    return course
 
-def decodejson(self,courseobj):
-    serialized = json.dumps(courseobj, indent=4, cls=CustomEncoder)
-    deserialized = json.loads(serialized, object_hook=decode_object)
-    return deserialized
 
 
 class Start_GA(Resource):
@@ -281,13 +267,13 @@ class Start_GA(Resource):
                              like so (61132,practice,"שגיא אריאלי"), this should only be used for courses and not clusters)
     :return:
     """
-    # GA.run(courses,clusters,specific_windows,specific_days_off,lecturers)
+    # run(courses,clusters,specific_windows,specific_days_off,lecturers)
 
 
 
     def get(self):
-        GA.run(['11231','61992','11102'],[['61958', '11102'],['61963','61964','61965']],['(0,2)', '(1,2)', '(2,2)', '(3,2)', '(4,2)'],['0', '2', '4'],['(11102,practice,"דר אדר רון")'])
-        return ('ok')
+        return (run(['11231','61992','11102'],[['61958', '11102'],['61963','61964','61965']],['(0,2)', '(1,2)', '(2,2)', '(3,2)', '(4,2)'],['0', '2', '4'],['(11102,practice,"דר אדר רון")']))
+
 
 api.add_resource(Start_GA, '/start_ga')
 
