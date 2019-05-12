@@ -16,9 +16,6 @@ api = Api(app)
 uri = "mongodb://ronsagi:aGhDWNKX0QWEriojd9mG9y7zB0vZNQ79dBpnm6DrSkio3gndDMWSMvm4EMmqy1qmoE7bt38GMWxM6FuK0P3oJA==@ronsagi.documents.azure.com:10255/?ssl=true&replicaSet=globaldb"
 client = pymongo.MongoClient(uri)
 
-db = client['adata']
-mycol = db["customers"]
-mycorcl = db["coursescol"]
 
 parser = reqparse.RequestParser()
 

@@ -30,6 +30,8 @@ class GA:
 
 
     def __init__(self,create_solution_method,create_objective_method,generation_size,number_of_generations,mutation_rate,crossover_rate):
+        GA.fitness_history = []
+        GA.curent_generation = []
         self.create_solution_method=create_solution_method
         self.create_objective_method=create_objective_method
         self.generation_size = generation_size

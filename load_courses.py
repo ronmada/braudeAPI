@@ -64,6 +64,7 @@ class Classes:
 
 
 def findCourse(course_id):
+
     doc_count = int(mycorcl.count_documents({"__Course__.id": course_id}))
     print("Docs found:" + str(doc_count))
     if int(doc_count) > 1:
