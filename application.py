@@ -250,9 +250,10 @@ api.add_resource(getCourse_, '/getcorga/<course_id>')
 
 
 def findCourse(course_id):
-    doc_count = str(int(mycorcl.count_documents({"__Course__.id": course_id})))
-    print("Docs found:" + doc_count)
+    doc_count = int(mycorcl.count_documents({"__Course__.id": course_id}))
+    print("Docs found:" + str(doc_count))
     if int(doc_count) > 1:
+        print("course_id {} appears more than once on DB".format(course_id))
         abort(1, message="course_id {} appears more than once on DB".format(course_id))
     elif doc_count == 0:
         print("Course ID: " + str(course_id) + " doesn't exist")
@@ -277,6 +278,7 @@ def decode_object(o):
     elif '__Kita__' in o:
         a = Kita("type",0,[],[],0)
         a.__dict__.update(o['__Kita__'])
+        a.lecturer = a.lectures[0].lecturer
         return a
     elif '__Lect__' in o:
         a = Lect("","","","","","")

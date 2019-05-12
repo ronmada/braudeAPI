@@ -129,8 +129,11 @@ class Kita:
         self.type=type
         self.g_number = g_number
         self.related_groups = related_groups
+        self.lecturer = ""
+
         self.lectures = lectures
-        self.lecturer =""
+        if len(self.lectures)>0:
+            self.lecturer = self.lectures[0].lecturer
         self.c_id=c_id
 
     def __repr__(self):

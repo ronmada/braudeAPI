@@ -188,6 +188,7 @@ class TableObjective(Objective):
                 for lesson in self.solution.lectures:
                     if c_id == lesson.c_id and c_type == lesson.type.strip():
                         if len(name.split(' ')) >= 3:
+
                             if name.split(' ')[1] != lesson.lecturer.split(' ')[1] and name.split(' ')[2] != lesson.lecturer.split(' ')[2]:
                                 score += 1
                         elif name.strip() != lesson.lecturer.strip():
