@@ -267,8 +267,7 @@ def decodejson(self,courseobj):
     return deserialized
 
 
-api.add_resource(Start_GA)
-class Start_GA(resource):
+class Start_GA(Resource):
     #def get(self,courses,clusters,specific_windows,specific_days_off,lecturers):
     """
     example run(['11231','61992','11102'],[['61958', '11102'],['61963','61964','61965']],['(0,2)', '(1,2)', '(2,2)', '(3,2)', '(4,2)'],['0', '2', '4'],['(11102,practice,"דר אדר רון")'])
@@ -284,9 +283,11 @@ class Start_GA(resource):
     # GA.run(courses,clusters,specific_windows,specific_days_off,lecturers)
 
 
+
     def get(self):
         run(['11231','61992','11102'],[['61958', '11102'],['61963','61964','61965']],['(0,2)', '(1,2)', '(2,2)', '(3,2)', '(4,2)'],['0', '2', '4'],['(11102,practice,"דר אדר רון")'])
 
+api.add_resource(Start_GA, '/start_ga')
 
 def decode_object(o):
     if '__Course__' in o:
