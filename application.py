@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, abort
+from flask import Flask, jsonify, abort , send_from_directory
 from flask_restful import Resource, Api, reqparse, abort
 import pymongo
 import bson.json_util
@@ -47,11 +47,23 @@ def abort_if_todo_doesnt_exist(todo_id):
     if todo_id not in TODOS:
         abort(404, message="Todo {} doesn't exist".format(todo_id))
 
+@app.route('/<path:path>', methods=['GET'])
+def static_proxy(path):
+  return send_from_directory('./', path)
 
+
+@app.route('/')
+def root():
+  return send_from_directory('./', 'index.html')
+
+'''
 @app.route('/')
 def index():
     return "Hello, Worlds@@!"
-
+'''
+@app.errorhandler(500)
+def server_error(e):
+  return 'An internal error occurred [application.py] %s' % e, 500
 
 @app.route('/todo/api/v1.0/tasks/<int:task_id>/', methods=['GET'])
 def get_task(task_id):
