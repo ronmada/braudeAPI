@@ -12,7 +12,7 @@ from flask_cors import CORS
 # Set-Item Env:FLASK_APP ".\application.py"
 # flask run
 app = Flask(__name__)
-#CORS(app)
+CORS(app)
 api = Api(app)
 uri = "mongodb://ronsagi:aGhDWNKX0QWEriojd9mG9y7zB0vZNQ79dBpnm6DrSkio3gndDMWSMvm4EMmqy1qmoE7bt38GMWxM6FuK0P3oJA==@ronsagi.documents.azure.com:10255/?ssl=true&replicaSet=globaldb"
 client = pymongo.MongoClient(uri)
