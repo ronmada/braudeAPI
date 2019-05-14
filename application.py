@@ -6,22 +6,14 @@ import json, copy, ast, sys
 from GA import run
 from GADS import Cluster,Course,Course_Group,Kita,Lect
 from load_courses import findCourse, decodejson
+from flask_cors import CORS
 
 
 # to run app from POWERSHELL:
 # Set-Item Env:FLASK_APP ".\application.py"
 # flask run
 app = Flask(__name__)
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-#CORS(app)
-=======
->>>>>>> parent of ae8b984... addded some shit
-=======
->>>>>>> parent of ae8b984... addded some shit
-=======
->>>>>>> parent of ae8b984... addded some shit
+CORS(app)
 api = Api(app)
 uri = "mongodb://ronsagi:aGhDWNKX0QWEriojd9mG9y7zB0vZNQ79dBpnm6DrSkio3gndDMWSMvm4EMmqy1qmoE7bt38GMWxM6FuK0P3oJA==@ronsagi.documents.azure.com:10255/?ssl=true&replicaSet=globaldb"
 client = pymongo.MongoClient(uri)
@@ -253,9 +245,7 @@ class getCourseJson(Resource):
 
 api.add_resource(getCourseJson, '/getcorj/<course_id>')
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 class getCourseJson2(Resource):
     def get(self):
         parser.add_argument("courseid")
@@ -269,13 +259,6 @@ class getCourseJson2(Resource):
 
 
 api.add_resource(getCourseJson2, '/getcorjs')
-
-=======
->>>>>>> parent of ae8b984... addded some shit
-=======
->>>>>>> parent of ae8b984... addded some shit
-=======
->>>>>>> parent of ae8b984... addded some shit
 
 # class getCourseGA(Resource):
 def getCourseGA(self, course_id):
