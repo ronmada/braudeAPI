@@ -4,7 +4,7 @@ itsdangerous==0.24
 Jinja2>=2.10.1
 MarkupSafe==1.0
 Werkzeug==0.14.1
-PyMongo==2.1
+PyMongo==3.5.1
 flask-pymongo==2.2
 flask_restful==0.3.7
 prettytable==0.7
