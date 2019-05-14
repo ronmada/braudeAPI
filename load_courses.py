@@ -65,7 +65,6 @@ class Classes:
 
 
 def findCourse(course_id):
-    ''''
     doc_count = int(mycorcl.count_documents({"__Course__.id": course_id}))
     print("Docs found:" + str(doc_count))
     if int(doc_count) > 1:
@@ -74,7 +73,6 @@ def findCourse(course_id):
     elif doc_count == 0:
         print("Course ID: " + str(course_id) + " doesn't exist")
         abort(404, message="Course ID: {} doesn't exist".format(course_id))
-    '''
     course = mycorcl.find_one({"__Course__.id" : course_id}, {"_id": 0})
     return course
 
