@@ -1,7 +1,6 @@
 from flask import Flask, jsonify, abort , send_from_directory
 from flask_restful import Resource, Api, reqparse, abort
 import pymongo
-import bson.json_util
 import json, copy, ast, sys
 from GA import run
 from GADS import Cluster,Course,Course_Group,Kita,Lect
