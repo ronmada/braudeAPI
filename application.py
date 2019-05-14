@@ -13,7 +13,10 @@ from load_courses import findCourse, decodejson
 # flask run
 app = Flask(__name__)
 <<<<<<< HEAD
+<<<<<<< HEAD
 #CORS(app)
+=======
+>>>>>>> parent of ae8b984... addded some shit
 =======
 >>>>>>> parent of ae8b984... addded some shit
 api = Api(app)
@@ -248,6 +251,7 @@ class getCourseJson(Resource):
 api.add_resource(getCourseJson, '/getcorj/<course_id>')
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 class getCourseJson2(Resource):
     def get(self):
         parser.add_argument("courseid")
@@ -262,6 +266,8 @@ class getCourseJson2(Resource):
 
 api.add_resource(getCourseJson2, '/getcorjs')
 
+=======
+>>>>>>> parent of ae8b984... addded some shit
 =======
 >>>>>>> parent of ae8b984... addded some shit
 
