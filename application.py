@@ -225,7 +225,7 @@ class getAllCourses(Resource):
         y = []
         for x in mycorcl.find({}, {"_id": 0}):
             y.append(x)
-        #print("Total Number of Documents Found: " + str(int(mycorcl.count_documents({}))))
+        print("Total Number of Documents Found: " + str(int(mycorcl.count_documents({}))))
         return jsonify(y)
 
 
