@@ -123,7 +123,7 @@ api.add_resource(dropColl, '/dropcoll')
 
 class tester(Resource):
     def get(self):
-        return "Test OK"
+        return jsonify("TEST OK")
 
 api.add_resource(tester, '/tester')
 
