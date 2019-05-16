@@ -121,6 +121,12 @@ class dropColl(Resource):
 api.add_resource(dropColl, '/dropcoll')
 
 
+class tester(Resource):
+    def get(self):
+        return "Test OK"
+
+api.add_resource(tester, '/tester')
+
 class getAllCourses(Resource):
     def get(self):
         return jsonify(load_courses.getallcourses())
