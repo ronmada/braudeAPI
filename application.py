@@ -125,7 +125,7 @@ class tester(Resource):
     def get(self):
         return jsonify("TEST OK")
 
-api.add_resource(tester, '/tester')
+api.add_resource(tester, '/testy')
 
 class getAllCourses(Resource):
     def get(self):
