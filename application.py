@@ -8,7 +8,7 @@ from flask_cors import CORS
 # Set-Item Env:FLASK_APP ".\application.py"
 # flask run
 app = Flask(__name__)
-#CORS(app)
+CORS(app)
 api = Api(app)
 
 
