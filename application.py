@@ -145,11 +145,12 @@ class getCourseJson2(Resource):
     def get(self):
         parser.add_argument("courseid")
         args = parser.parse_args()
+        print("COURSEID:" + str(args.courseid))
         course = load_courses.findCourse(args.courseid)
         #print("Course:" + str(course))
-        co=[]
-        co.append(course)
-        return jsonify(co)
+        courselist = []
+        courselist.append(course)
+        return jsonify(courselist)
 
 api.add_resource(getCourseJson2, '/getcorjs')
 
