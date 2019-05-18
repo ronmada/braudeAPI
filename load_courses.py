@@ -1,13 +1,11 @@
 from GADS import Course,Course_Group,Kita,Lect,Cluster
-import os
-import argparse
-import pymongo , json
+from flask_restful import  abort
+import copy , argparse , pymongo ,json
 
 uri = "mongodb://ronsagi:aGhDWNKX0QWEriojd9mG9y7zB0vZNQ79dBpnm6DrSkio3gndDMWSMvm4EMmqy1qmoE7bt38GMWxM6FuK0P3oJA==@ronsagi.documents.azure.com:10255/?ssl=true&replicaSet=globaldb"
 client = pymongo.MongoClient(uri)
 
 db = client['adata']
-mycol = db["customers"]
 mycorcl = db["coursescol"]
 
 class Classes:
@@ -64,7 +62,6 @@ class Classes:
 
 
 def findCourse(course_id):
-
     doc_count = int(mycorcl.count_documents({"__Course__.id": course_id}))
     print("Docs found:" + str(doc_count))
     if int(doc_count) > 1:
@@ -74,12 +71,40 @@ def findCourse(course_id):
         print("Course ID: " + str(course_id) + " doesn't exist")
         abort(404, message="Course ID: {} doesn't exist".format(course_id))
     course = mycorcl.find_one({"__Course__.id" : course_id}, {"_id": 0})
+    print("Course ID:" + str(course_id))
+    #print("Course:" + str(course))
     return course
 
 def decodejson(self,courseobj):
     serialized = json.dumps(courseobj, indent=4, cls=CustomEncoder)
     deserialized = json.loads(serialized, object_hook=decode_object)
     return deserialized
+
+
+def insert_docs():
+    print("INSERTING")
+    with open('all_courses_final.json', 'r') as f:
+        datastore = json.load(f)
+    datastore_copy = copy.deepcopy(datastore)
+    print("Total number of documents found before insertion:" + str(mycorcl.count()))
+    x = mycorcl.insert_many(datastore)
+    print("Mongo Message:" + str(x))
+    print("Total Number of Documents found after insertion:" + str(mycorcl.count()))
+    #print("|DATASTORE STARTS HERE|" + str(datastore_copy) + "|AFTER DATASTORE ENDS HERE|") # all inserted documents
+    with open('datastore.json', 'w', encoding='utf-8') as f:
+        f.write(str(datastore))
+    return datastore_copy
+
+def dropcollection():
+    mycorcl.drop()
+    print("Collection dropped")
+
+def getallcourses():
+    courselist = []
+    for course in mycorcl.find({}, {"_id": 0}):
+        courselist.append(course)
+    print("Total Number of Documents Found: " + str(int(mycorcl.count_documents({}))))
+    return courselist
 
 
 def decode_object(o):
