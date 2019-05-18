@@ -3,6 +3,7 @@ from flask_restful import Resource, Api, reqparse
 from GA import run
 import load_courses
 from flask_cors import CORS
+from Utils import parse_args
 
 # to run app from POWERSHELL:
 # Set-Item Env:FLASK_APP ".\application.py"
@@ -170,7 +171,37 @@ class Start_GA(Resource):
     # run(courses,clusters,specific_windows,specific_days_off,lecturers)
 
     def get(self):
-        return (run(['11231','61992','11102'],[['61958', '11102'],['61963','61964','61965']],['(0,2)', '(1,2)', '(2,2)', '(3,2)', '(4,2)'],['0', '2', '4'],['(11102,practice,"דר אדר רון")']))
+        parser.add_argument('courses', type=str, default=False,action='append',
+                          help='a course number')
+        parser.add_argument('cluster', type=str, action='append', default=[],
+                          help='for each - group a group containing the courses will be added')
+        parser.add_argument('specific_windows', action='append', type=str, default=False,
+                          help='for each specific window : add -spedific_window (day,period) like so (0,0) means:'
+                               ' (yum aleph, 8:30-9:30)')
+        parser.add_argument('specific_days_off', action='append', type=str, default=False,
+                          help='for each specific day off add: -specific_days_off day1 day2... like so -specific_days_off 0 4')
+        parser.add_argument('lecturer', action='append', type=str, default=False,
+                          help='add specific prefered lecturer to a courses lectuer -lecturer (c_id,lect lype, name)'
+                               ' like so (61132,practice,"שגיא אריאלי"), this hould only be used for courses and '
+                               'not clusters')
+        args = parser.parse_args()
+        #courses fix
+        courses =args['courses'][0].split(' ')
+        args['courses'] = courses
+        #cluster fix
+        clusters = []
+        for clust in args['cluster']:
+            cluster = clust.split(' ')
+            clusters.append(cluster)
+        args['cluster'] = clusters
+        # specific_windows fix
+        specific_windows = args['specific_windows'][0].split(' ')
+        args['specific_windows'] = specific_windows
+        # specific_days_off
+        specific_days_off = args['specific_days_off'][0].split(' ')
+        args['specific_days_off'] = specific_days_off
+
+        return (run(args['courses'],args['cluster'],args['specific_windows'],args['specific_days_off'],args['lecturer']))
 
 
 api.add_resource(Start_GA, '/start_ga')

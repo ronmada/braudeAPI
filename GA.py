@@ -129,6 +129,7 @@ def run(courses,clusters,specific_windows,specific_days_off,lecturers):
                              like so (61132,practice,"שגיא אריאלי"), this should only be used for courses and not clusters)
     :return:
     """
+    print('courses = ' +str(courses) + ' clusters = ' + str(clusters) + ' specific_windows = ' + str(specific_windows) + ' specific_days_off = ' + str(specific_days_off) + ' lecturers = ' + str(lecturers))
     TableObjective.specific_windows = specific_windows
     TableObjective.specific_free_days = specific_days_off
     TableObjective.lecturers = lecturers
@@ -140,10 +141,10 @@ def run(courses,clusters,specific_windows,specific_days_off,lecturers):
 
     genetic_algo = GA(TableSolution, TableObjective, 30, 50, 0.5, 0)
     genetic_algo.start()
-    return (genetic_algo.curent_generation[genetic_algo.generation_size-1].string_table())
+    return (genetic_algo.curent_generation[genetic_algo.generation_size-1].string_table() + '               ' + genetic_algo.curent_generation[genetic_algo.generation_size-1].objective.string_fitness_paramenters())
 
 if __name__ == "__main__":
-    args = Utils.parse()
+    args = Utils.parse_args()
     run(args.courses,args.cluster,args.specific_windows,args.specific_days_off,args.lecturer)
     #run(['11231','61992','11102'],[['61958', '11102'],['61963','61964','61965']],['(0,2)', '(1,2)', '(2,2)', '(3,2)', '(4,2)'],['0', '2', '4'],['(11102,practice,"דר אדר רון")'])
 

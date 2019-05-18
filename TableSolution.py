@@ -233,8 +233,6 @@ class TableSolution(Solution):
                         seconf_list.append(lect)
 
             if len(first_list)>0:
-                print("first_list:  " + str(first_list[0].course))
-                print("secondlist:  " + str(seconf_list[0].course))
                 if first_list[0].course == seconf_list[0].course:
                     same_group = True
                     for l in seconf_list:
@@ -366,7 +364,7 @@ class TableSolution(Solution):
 if __name__== "__main__":
     # activation via command line is a possibility
 
-    args = Utils.parse()
+    args = Utils.parse_args()
     TableObjective.specific_windows = args.specific_windows
     TableObjective.specific_free_days = args.specific_days_off
     TableObjective.lecturers = args.lecturer

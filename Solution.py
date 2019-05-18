@@ -351,7 +351,7 @@ class Solution:
 if __name__== "__main__":
     # activation via command line is a possibility
 
-    args = Utils.parse()
+    args = Utils.parse_args()
     Objective.specific_windows = args.specific_windows
     Objective.specific_free_days = args.specific_days_off
     Objective.lecturers = args.lecturer
