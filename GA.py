@@ -141,7 +141,7 @@ def run(courses,clusters,specific_windows,specific_days_off,lecturers):
 
     genetic_algo = GA(TableSolution, TableObjective, 30, 50, 0.5, 0)
     genetic_algo.start()
-    return (genetic_algo.curent_generation[genetic_algo.generation_size-1].string_table() + '               ' + genetic_algo.curent_generation[genetic_algo.generation_size-1].objective.string_fitness_paramenters())
+    return (genetic_algo.curent_generation[genetic_algo.generation_size-1])
 
 if __name__ == "__main__":
     args = Utils.parse_args()

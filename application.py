@@ -4,6 +4,7 @@ from GA import run
 import load_courses
 from flask_cors import CORS
 from Utils import parse_args
+from TableSolution import TableSolution
 
 # to run app from POWERSHELL:
 # Set-Item Env:FLASK_APP ".\application.py"
@@ -151,7 +152,7 @@ class getCourseJson2(Resource):
         #print("Course:" + str(course))
         courselist = []
         courselist.append(course)
-        return jsonify(courselist)
+        return jsonify(course)
 
 api.add_resource(getCourseJson2, '/getcorjs')
 
@@ -195,13 +196,43 @@ class Start_GA(Resource):
             clusters.append(cluster)
         args['cluster'] = clusters
         # specific_windows fix
-        specific_windows = args['specific_windows'][0].split(' ')
-        args['specific_windows'] = specific_windows
+        if args['specific_windows']:
+            specific_windows = args['specific_windows'][0].split(' ')
+            args['specific_windows'] = specific_windows
         # specific_days_off
-        specific_days_off = args['specific_days_off'][0].split(' ')
-        args['specific_days_off'] = specific_days_off
+        if args['specific_days_off']:
+            specific_days_off = args['specific_days_off'][0].split(' ')
+            args['specific_days_off'] = specific_days_off
 
-        return (run(args['courses'],args['cluster'],args['specific_windows'],args['specific_days_off'],args['lecturer']))
+        sol = run(args['courses'],args['cluster'],args['specific_windows'],args['specific_days_off'],args['lecturer'])
+        classes = []
+        for clas in sol.lectures:
+            lectures = []
+            for lecture in clas.lectures:
+                lect = {
+                    "Semester": lecture.semester,
+                    "Day": lecture.day_in_week,
+                    "Start time": lecture.start_time.hour,
+                    "End time": lecture.end_time.hour,
+                    "Lecturer name": lecture.lecturer,
+                    "Class location": lecture.location
+                }
+                lectures.append(lect)
+            kita ={
+                "Class type": clas.type,
+                "group number": clas.g_number,
+                "Related groups": clas.related_groups,
+                "lectures": lectures,
+                "c ID": clas.c_id,
+                "lecturer": clas.lecturer
+            }
+            classes.append(kita)
+        solution = {
+            "classes": classes
 
+        }
+        ret = jsonify(solution)
+
+        return ret
 
 api.add_resource(Start_GA, '/start_ga')
