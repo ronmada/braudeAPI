@@ -16,11 +16,11 @@ api = Api(app)
 
 parser = reqparse.RequestParser()
 
-
+'''
 @app.route('/<path:path>', methods=['GET'])
 def static_proxy(path):
     return send_from_directory('./', path)
-
+'''
 
 @app.route('/')
 def root():
