@@ -212,18 +212,18 @@ class Start_GA(Resource):
                 lect = {
                     "Semester": lecture.semester,
                     "Day": lecture.day_in_week,
-                    "Start time": lecture.start_time.hour,
-                    "End time": lecture.end_time.hour,
+                    "Start_time": lecture.start_time.hour,
+                    "End_time": lecture.end_time.hour,
                     "Lecturer name": lecture.lecturer,
-                    "Class location": lecture.location
+                    "Class_location": lecture.location
                 }
                 lectures.append(lect)
             kita ={
-                "Class type": clas.type,
-                "group number": clas.g_number,
-                "Related groups": clas.related_groups,
+                "Class_type": clas.type,
+                "group_number": clas.g_number,
+                "Related_groups": clas.related_groups,
                 "lectures": lectures,
-                "c ID": clas.c_id,
+                "c_ID": clas.c_id,
                 "lecturer": clas.lecturer
             }
             classes.append(kita)

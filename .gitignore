@@ -2,3 +2,5 @@
 .idea/workspace.xml
 *.pyc
 .vscode/settings.json
+__pycache__/application.cpython-36.pyc
+.idea/workspace.xml
