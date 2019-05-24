@@ -197,10 +197,12 @@ class Start_GA(Resource):
         args['cluster'] = clusters
         # specific_windows fix
         if args['specific_windows']:
+            print(args['specific_windows'])
             specific_windows = args['specific_windows'][0].split(' ')
             args['specific_windows'] = specific_windows
         # specific_days_off
         if args['specific_days_off']:
+            print(args['specific_days_off'])
             specific_days_off = args['specific_days_off'][0].split(' ')
             args['specific_days_off'] = specific_days_off
 
