@@ -21,7 +21,7 @@
         <entry file="file://$PROJECT_DIR$/application.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="624">
-              <caret line="219" column="34" selection-start-line="219" selection-start-column="21" selection-end-line="219" selection-end-column="34" />
+              <caret line="222" column="34" selection-start-line="222" selection-start-column="21" selection-end-line="222" selection-end-column="34" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
               </folding>
@@ -377,7 +377,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.06302083" />
@@ -662,7 +662,7 @@
     <entry file="file://$PROJECT_DIR$/application.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="624">
-          <caret line="219" column="34" selection-start-line="219" selection-start-column="21" selection-end-line="219" selection-end-column="34" />
+          <caret line="222" column="34" selection-start-line="222" selection-start-column="21" selection-end-line="222" selection-end-column="34" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
           </folding>
