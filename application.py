@@ -217,7 +217,7 @@ class Start_GA(Resource):
                     "Day": lecture.day_in_week,
                     "Start_time": lecture.start_time.hour,
                     "End_time": lecture.end_time.hour,
-                    "Lecturer name": lecture.lecturer,
+                    "Lecturer_name": lecture.lecturer,
                     "Class_location": lecture.location
                 }
                 lectures.append(lect)
