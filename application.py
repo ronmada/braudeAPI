@@ -26,6 +26,9 @@ def static_proxy(path):
 def root():
     return send_from_directory('./', 'index.html')
 
+@app.errorhandler(404)
+def page_not_found(e):
+    return send_from_directory('./', 'index.html')
 
 '''
 @app.route('/')
