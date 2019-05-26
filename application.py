@@ -19,16 +19,16 @@ parser = reqparse.RequestParser()
 
 @app.route('/<path:path>', methods=['GET'])
 def static_proxy(path):
-    return send_from_directory('./', path)
+    return send_from_directory('./dist', path)
 
 
 @app.route('/')
 def root():
-    return send_from_directory('./', 'index.html')
+    return send_from_directory('./dist', 'index.html')
 
 @app.errorhandler(404)
 def page_not_found(e):
-    return send_from_directory('./', 'index.html')
+    return send_from_directory('./dist', 'index.html')
 
 '''
 @app.route('/')
