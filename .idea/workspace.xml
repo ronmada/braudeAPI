@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="12a5eb19-6ebf-47cc-9ce4-e80e63f8e375" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/TableObjective.py" beforeDir="false" afterPath="$PROJECT_DIR$/TableObjective.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/3rdpartylicenses.txt" beforeDir="false" afterPath="$PROJECT_DIR$/dist/3rdpartylicenses.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/es2015-polyfills.c5dd28b362270c767b34.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/main.30848189a83a6748d316.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -71,8 +67,8 @@
       <file leaf-file-name="TableObjective.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TableObjective.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="580">
-              <caret line="237" column="91" selection-start-line="237" selection-start-column="91" selection-end-line="237" selection-end-column="91" />
+            <state relative-caret-position="528">
+              <caret line="236" column="117" selection-start-line="236" selection-start-column="117" selection-end-line="236" selection-end-column="117" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -383,7 +379,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.06302083" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.06302083" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5005208" side_tool="true" weight="0.32837406" />
       <window_info anchor="bottom" id="Version Control" order="9" />
@@ -741,8 +737,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TableObjective.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="580">
-          <caret line="237" column="91" selection-start-line="237" selection-start-column="91" selection-end-line="237" selection-end-column="91" />
+        <state relative-caret-position="528">
+          <caret line="236" column="117" selection-start-line="236" selection-start-column="117" selection-end-line="236" selection-end-column="117" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
