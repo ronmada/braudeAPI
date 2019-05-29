@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12a5eb19-6ebf-47cc-9ce4-e80e63f8e375" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TableObjective.py" beforeDir="false" afterPath="$PROJECT_DIR$/TableObjective.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/main.e4f9573f47b3fa7f9848.js" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -67,8 +70,8 @@
       <file leaf-file-name="TableObjective.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TableObjective.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="236" column="117" selection-start-line="236" selection-start-column="117" selection-end-line="236" selection-end-column="117" />
+            <state relative-caret-position="606">
+              <caret line="239" column="75" selection-start-line="239" selection-start-column="67" selection-end-line="239" selection-end-column="75" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -181,7 +184,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-7" />
     <option name="width" value="1230" />
     <option name="height" value="1047" />
@@ -737,8 +740,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TableObjective.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="236" column="117" selection-start-line="236" selection-start-column="117" selection-end-line="236" selection-end-column="117" />
+        <state relative-caret-position="606">
+          <caret line="239" column="75" selection-start-line="239" selection-start-column="67" selection-end-line="239" selection-end-column="75" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
