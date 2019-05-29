@@ -229,13 +229,13 @@ class TableObjective(Objective):
 
 
     def string_fitness_paramenters(self):
-        return(self.solution.string_table() + '\n'
-                                              'windows = '+str(self.table_windows)+'\n'
-                                              'spesific_window_desecrated = '+str(self.spesific_window_desecrated) +'\n'
-                                              'overlaps = ' + str(self.overlaps_number) + '\n'
-                                              'school_days' + str(self.numer_of_school_days) + '\n'
-                                              'specific_lecturers_violated = '+str(self.specific_lecturers_violated)+ '\n'
-                                              'far_classes = ' + str(self.far_classes)+'\n'
+        return('\n'
+                                              'windows = '+str(self.table_windows)+'      '
+                                              'spesific_window_desecrated = '+str(self.spesific_window_desecrated) +'     '
+                                              'overlaps = ' + str(self.overlaps_number) + '    '
+                                              'school_days' + str(self.numer_of_school_days) + '    '
+                                              'specific_lecturers_violated = '+str(self.specific_lecturers_violated)+ '    '
+                                              'far_classes = ' + str(self.far_classes)+'   '
                                               'score = '+ str(self.solution.score))
 
 
