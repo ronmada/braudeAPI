@@ -234,7 +234,8 @@ class Start_GA(Resource):
             }
             classes.append(kita)
         solution = {
-            "classes": classes
+            "classes": classes,
+            "Score" : sol.objective.string_fitness_paramenters()
 
         }
         ret = jsonify(solution)

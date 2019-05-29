@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="12a5eb19-6ebf-47cc-9ce4-e80e63f8e375" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/load_courses.py" beforeDir="false" afterPath="$PROJECT_DIR$/load_courses.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,8 +19,8 @@
       <file leaf-file-name="application.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="624">
-              <caret line="222" column="34" selection-start-line="222" selection-start-column="21" selection-end-line="222" selection-end-column="34" />
+            <state relative-caret-position="528">
+              <caret line="237" column="63" selection-start-line="237" selection-start-column="63" selection-end-line="237" selection-end-column="63" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
               </folding>
@@ -32,7 +31,7 @@
       <file leaf-file-name="Utils.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
+            <state relative-caret-position="832">
               <caret line="34" column="44" selection-start-line="22" selection-start-column="4" selection-end-line="34" selection-end-column="44" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -56,7 +55,7 @@
       <file leaf-file-name="Objective.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Objective.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
+            <state relative-caret-position="4576">
               <caret line="177" column="39" selection-start-line="177" selection-start-column="31" selection-end-line="177" selection-end-column="39" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -68,8 +67,8 @@
       <file leaf-file-name="TableObjective.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TableObjective.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-563">
-              <caret line="96" selection-start-line="96" selection-end-line="97" />
+            <state relative-caret-position="398">
+              <caret line="230" column="34" selection-start-line="230" selection-start-column="8" selection-end-line="230" selection-end-column="34" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -89,8 +88,8 @@
       <file leaf-file-name="GA.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GA.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="670">
-              <caret line="143" column="74" selection-start-line="143" selection-start-column="74" selection-end-line="143" selection-end-column="74" />
+            <state relative-caret-position="305">
+              <caret line="43" column="26" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="26" />
               <folding>
                 <element signature="e#1#16#0" expanded="true" />
               </folding>
@@ -101,8 +100,8 @@
       <file leaf-file-name="TableSolution.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TableSolution.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="566">
-              <caret line="331" column="28" lean-forward="true" selection-start-line="323" selection-start-column="12" selection-end-line="331" selection-end-column="28" />
+            <state relative-caret-position="20">
+              <caret line="331" column="28" selection-start-line="323" selection-start-column="12" selection-end-line="331" selection-end-column="28" />
               <folding>
                 <element signature="e#0#54#0" expanded="true" />
               </folding>
@@ -121,7 +120,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>for item in Objective.lecturers</find>
       <find>420</find>
       <find>print</find>
       <find>kitakita</find>
@@ -130,9 +128,9 @@
       <find>load_courses</find>
       <find>loads_courses</find>
       <find>C</find>
-      <find>Course Info</find>
+      <find />
       <find>xxx</find>
-      <find>CLUSTER HERE</find>
+      <find />
       <find>CLUSTER</find>
       <find>cluster</find>
       <find>core</find>
@@ -151,6 +149,7 @@
       <find>insert_docs</find>
       <find>first_list:</find>
       <find>run</find>
+      <find>obje</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -405,6 +404,83 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/application.py">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5772">
+          <caret line="222" column="34" selection-start-line="222" selection-start-column="21" selection-end-line="222" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="832">
+          <caret line="34" column="44" selection-start-line="22" selection-start-column="4" selection-end-line="34" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/load_courses.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Objective.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4576">
+          <caret line="177" column="39" selection-start-line="177" selection-start-column="31" selection-end-line="177" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TableObjective.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2444">
+          <caret line="96" selection-start-line="96" selection-end-line="97" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AbsGAClasses.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="520">
+          <caret line="20" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3692">
+          <caret line="143" column="74" selection-start-line="143" selection-start-column="74" selection-end-line="143" selection-end-column="74" />
+          <folding>
+            <element signature="e#1#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TableSolution.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8398">
+          <caret line="331" column="28" lean-forward="true" selection-start-line="323" selection-start-column="12" selection-end-line="331" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application.py">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5434">
           <caret line="215" column="53" selection-start-line="215" selection-start-column="53" selection-end-line="215" selection-end-column="53" />
           <folding>
@@ -604,7 +680,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Objective.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
+        <state relative-caret-position="4576">
           <caret line="177" column="39" selection-start-line="177" selection-start-column="31" selection-end-line="177" selection-end-column="39" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
@@ -619,40 +695,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GA.py">
+    <entry file="file://$PROJECT_DIR$/Utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="143" column="74" selection-start-line="143" selection-start-column="74" selection-end-line="143" selection-end-column="74" />
-          <folding>
-            <element signature="e#1#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TableObjective.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-563">
-          <caret line="96" selection-start-line="96" selection-end-line="97" />
+        <state relative-caret-position="832">
+          <caret line="34" column="44" selection-start-line="22" selection-start-column="4" selection-end-line="34" selection-end-column="44" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/GA.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="43" column="26" selection-start-line="43" selection-start-column="17" selection-end-line="43" selection-end-column="26" />
+          <folding>
+            <element signature="e#1#16#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TableSolution.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="331" column="28" lean-forward="true" selection-start-line="323" selection-start-column="12" selection-end-line="331" selection-end-column="28" />
+        <state relative-caret-position="20">
+          <caret line="331" column="28" selection-start-line="323" selection-start-column="12" selection-end-line="331" selection-end-column="28" />
           <folding>
             <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Utils.py">
+    <entry file="file://$PROJECT_DIR$/TableObjective.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="34" column="44" selection-start-line="22" selection-start-column="4" selection-end-line="34" selection-end-column="44" />
+        <state relative-caret-position="398">
+          <caret line="230" column="34" selection-start-line="230" selection-start-column="8" selection-end-line="230" selection-end-column="34" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
@@ -661,8 +737,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="624">
-          <caret line="222" column="34" selection-start-line="222" selection-start-column="21" selection-end-line="222" selection-end-column="34" />
+        <state relative-caret-position="528">
+          <caret line="237" column="63" selection-start-line="237" selection-start-column="63" selection-end-line="237" selection-end-column="63" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />
           </folding>
