@@ -234,7 +234,7 @@ class TableObjective(Objective):
                                               'spesific_window_desecrated = '+str(self.spesific_window_desecrated) +'     '
                                               'overlaps = ' + str(self.overlaps_number) + '    '
                                               'school_days' + str(self.numer_of_school_days) + '    '
-                                              'spesific days off violated = ' + str(self.self.days_violated) + '     '
+                                              'spesific days off violated = ' + str(self.days_violated) + '     '
                                               'specific_lecturers_violated = '+str(self.specific_lecturers_violated)+ '    '
                                               'far_classes = ' + str(self.far_classes)+'   '
                                               'score = '+ str(self.solution.score))
