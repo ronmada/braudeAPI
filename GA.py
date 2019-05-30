@@ -141,6 +141,15 @@ def run(courses,clusters,specific_windows,specific_days_off,lecturers):
 
     genetic_algo = GA(TableSolution, TableObjective, 30, 50, 0.5, 0)
     genetic_algo.start()
+    i=genetic_algo.generation_size-1
+    count =1
+    results = [genetic_algo.curent_generation[i]]
+    while i>0 and count<3:
+        for res in results:
+            if (res.lectures != genetic_algo.curent_generation[i].lectures):
+                results.append(genetic_algo.curent_generation[i])
+                count+=1
+        i+=1
     return (genetic_algo.curent_generation[genetic_algo.generation_size-1])
 
 if __name__ == "__main__":
