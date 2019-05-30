@@ -4,10 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/TableSolution.py" line="233" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="12a5eb19-6ebf-47cc-9ce4-e80e63f8e375" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/GA.py" beforeDir="false" afterPath="$PROJECT_DIR$/GA.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application.py" beforeDir="false" afterPath="$PROJECT_DIR$/application.py" afterDir="false" />
-    </list>
+    <list default="true" id="12a5eb19-6ebf-47cc-9ce4-e80e63f8e375" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,7 +17,7 @@
       <file leaf-file-name="application.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="436">
+            <state relative-caret-position="-188">
               <caret line="211" column="16" selection-start-line="211" selection-start-column="16" selection-end-line="211" selection-end-column="16" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
@@ -129,9 +126,9 @@
       <find>load_courses</find>
       <find>loads_courses</find>
       <find>C</find>
-      <find>Course Info</find>
+      <find />
       <find>xxx</find>
-      <find>CLUSTER HERE</find>
+      <find />
       <find>CLUSTER</find>
       <find>cluster</find>
       <find>core</find>
@@ -182,7 +179,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="width" value="1230" />
     <option name="height" value="1047" />
@@ -738,7 +735,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="436">
+        <state relative-caret-position="-188">
           <caret line="211" column="16" selection-start-line="211" selection-start-column="16" selection-end-line="211" selection-end-column="16" />
           <folding>
             <element signature="e#0#53#0" expanded="true" />

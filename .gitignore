@@ -9,3 +9,4 @@ __pycache__/application.cpython-37.pyc
 *.pyc
 __pycache__/TableObjective.cpython-37.pyc
 *.pyc
+.idea/workspace.xml
