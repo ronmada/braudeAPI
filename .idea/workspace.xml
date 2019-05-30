@@ -24,8 +24,13 @@
         <entry file="file://$PROJECT_DIR$/application.py">
           <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <state relative-caret-position="-188">
               <caret line="211" column="16" selection-start-line="211" selection-start-column="16" selection-end-line="211" selection-end-column="16" />
+=======
+            <state relative-caret-position="528">
+              <caret line="237" column="63" selection-start-line="237" selection-start-column="63" selection-end-line="237" selection-end-column="63" />
+>>>>>>> parent of eb3284b... made ga result a list
 =======
             <state relative-caret-position="528">
               <caret line="237" column="63" selection-start-line="237" selection-start-column="63" selection-end-line="237" selection-end-column="63" />
@@ -747,8 +752,13 @@
     <entry file="file://$PROJECT_DIR$/TableObjective.py">
       <provider selected="true" editor-type-id="text-editor">
 <<<<<<< HEAD
+<<<<<<< HEAD
         <state relative-caret-position="-188">
           <caret line="211" column="16" selection-start-line="211" selection-start-column="16" selection-end-line="211" selection-end-column="16" />
+=======
+        <state relative-caret-position="606">
+          <caret line="238" column="86" selection-start-line="238" selection-start-column="86" selection-end-line="238" selection-end-column="86" />
+>>>>>>> parent of eb3284b... made ga result a list
 =======
         <state relative-caret-position="606">
           <caret line="238" column="86" selection-start-line="238" selection-start-column="86" selection-end-line="238" selection-end-column="86" />
