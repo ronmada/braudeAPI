@@ -210,36 +210,42 @@ class Start_GA(Resource):
             args['specific_days_off'] = specific_days_off
             print(args['specific_days_off'])
 
-        sol = run(args['courses'],args['cluster'],args['specific_windows'],args['specific_days_off'],args['lecturer'])
-        classes = []
-        for clas in sol.lectures:
-            lectures = []
-            for lecture in clas.lectures:
-                lect = {
-                    "Semester": lecture.semester,
-                    "Day": lecture.day_in_week,
-                    "Start_time": lecture.start_time.hour,
-                    "End_time": lecture.end_time.hour,
-                    "Lecturer_name": lecture.lecturer,
-                    "Class_location": lecture.location
+        ret = []
+        solutions = run(args['courses'], args['cluster'], args['specific_windows'], args['specific_days_off'],
+                        args['lecturer'])
+        for sol in solutions:
+            classes = []
+            for clas in sol.lectures:
+                lectures = []
+                for lecture in clas.lectures:
+                    lect = {
+                        "Semester": lecture.semester,
+                        "Day": lecture.day_in_week,
+                        "Start_time": lecture.start_time.hour,
+                        "End_time": lecture.end_time.hour,
+                        "Lecturer_name": lecture.lecturer,
+                        "Class_location": lecture.location
+                    }
+                    lectures.append(lect)
+                kita = {
+                    "Class_type": clas.type,
+                    "group_number": clas.g_number,
+                    "Related_groups": clas.related_groups,
+                    "lectures": lectures,
+                    "c_ID": clas.c_id,
+                    "lecturer": clas.lecturer
                 }
-                lectures.append(lect)
-            kita ={
-                "Class_type": clas.type,
-                "group_number": clas.g_number,
-                "Related_groups": clas.related_groups,
-                "lectures": lectures,
-                "c_ID": clas.c_id,
-                "lecturer": clas.lecturer
+                classes.append(kita)
+            solution = {
+                "classes": classes,
+                "Score": sol.objective.string_fitness_paramenters()
+
             }
-            classes.append(kita)
-        solution = {
-            "classes": classes,
-            "Score" : sol.objective.string_fitness_paramenters()
+            ret.append(solution)
 
+        json_res = {
+            "results": ret
         }
-        ret = jsonify(solution)
-
-        return ret
+        return jsonify(json_res)
 
 api.add_resource(Start_GA, '/start_ga')
