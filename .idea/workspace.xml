@@ -4,13 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/TableSolution.py" line="233" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
-    <list default="true" id="12a5eb19-6ebf-47cc-9ce4-e80e63f8e375" name="Default" comment="" />
-=======
     <list default="true" id="12a5eb19-6ebf-47cc-9ce4-e80e63f8e375" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/TableObjective.py" beforeDir="false" afterPath="$PROJECT_DIR$/TableObjective.py" afterDir="false" />
     </list>
->>>>>>> parent of eb3284b... made ga result a list
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,18 +19,15 @@
       <file leaf-file-name="application.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application.py">
           <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             <state relative-caret-position="-188">
               <caret line="211" column="16" selection-start-line="211" selection-start-column="16" selection-end-line="211" selection-end-column="16" />
-=======
             <state relative-caret-position="528">
               <caret line="237" column="63" selection-start-line="237" selection-start-column="63" selection-end-line="237" selection-end-column="63" />
->>>>>>> parent of eb3284b... made ga result a list
-=======
             <state relative-caret-position="528">
               <caret line="237" column="63" selection-start-line="237" selection-start-column="63" selection-end-line="237" selection-end-column="63" />
->>>>>>> parent of eb3284b... made ga result a list
+            <state relative-caret-position="528">
+              <caret line="237" column="63" selection-start-line="237" selection-start-column="63" selection-end-line="237" selection-end-column="63" />
               <folding>
                 <element signature="e#0#53#0" expanded="true" />
               </folding>
@@ -751,18 +744,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/TableObjective.py">
       <provider selected="true" editor-type-id="text-editor">
-<<<<<<< HEAD
-<<<<<<< HEAD
         <state relative-caret-position="-188">
           <caret line="211" column="16" selection-start-line="211" selection-start-column="16" selection-end-line="211" selection-end-column="16" />
-=======
         <state relative-caret-position="606">
           <caret line="238" column="86" selection-start-line="238" selection-start-column="86" selection-end-line="238" selection-end-column="86" />
->>>>>>> parent of eb3284b... made ga result a list
-=======
         <state relative-caret-position="606">
           <caret line="238" column="86" selection-start-line="238" selection-start-column="86" selection-end-line="238" selection-end-column="86" />
->>>>>>> parent of eb3284b... made ga result a list
+        <state relative-caret-position="606">
+          <caret line="238" column="86" selection-start-line="238" selection-start-column="86" selection-end-line="238" selection-end-column="86" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
