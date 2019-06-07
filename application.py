@@ -190,8 +190,11 @@ class Start_GA(Resource):
                                'not clusters')
         args = parser.parse_args()
         #courses fix
-        courses =args['courses'][0].split(' ')
-        args['courses'] = courses
+        if args['courses']:
+            courses =args['courses'][0].split(' ')
+            args['courses'] = courses
+        else:
+            args['courses'] = []
         #cluster fix
         clusters = []
         for clust in args['cluster']:
