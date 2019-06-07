@@ -11,15 +11,20 @@ class TableObjective(Objective):
     the user inputs should be set as static attributes, the will be off by default.
     """
 
-    max_objective=50
+    max_objective=100
     specific_windows = False
     specific_free_days = False
     lecturers = False
     panelty_weight = 6
     free_days_weight = 4
+    spesific_days_off_weight = 5
+    specific_windows_weight = 2
+    specific_lecturers_weight = 3
 
     def __init__(self,solution):
         self.solution = solution
+
+
 
 
     def evaluation(self):
@@ -36,10 +41,10 @@ class TableObjective(Objective):
     def fitness(self,):
         fitness = 0
         fitness += self.windows()
-        fitness += self.spesific_window()
-        fitness += TableObjective.free_days_weight*self.school_days()
-        fitness += self.specific_days_off()
-        fitness += self.specific_lecturers()
+        fitness += TableObjective.specific_windows_weight * self.spesific_window()
+        fitness += TableObjective.free_days_weight * self.school_days()
+        fitness += TableObjective.spesific_days_off_weight * self.specific_days_off()
+        fitness += TableObjective.specific_lecturers_weight * self.specific_lecturers()
         fitness += self.classroom_proximity()
         return fitness
 
@@ -229,7 +234,7 @@ class TableObjective(Objective):
 
 
     def string_fitness_paramenters(self):
-        return('\n'
+        return('\n' + 'score = ' + str(self.solution.objective.evaluation()) + '        '
                                               'windows = '+str(self.table_windows)+'      '
                                               'spesific_window_desecrated = '+str(self.spesific_window_desecrated) +'     '
                                               'overlaps = ' + str(self.overlaps_number) + '    '

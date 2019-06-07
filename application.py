@@ -188,6 +188,12 @@ class Start_GA(Resource):
                           help='add specific prefered lecturer to a courses lectuer -lecturer (c_id,lect lype, name)'
                                ' like so (61132,practice,"שגיא אריאלי"), this hould only be used for courses and '
                                'not clusters')
+        parser.add_argument('specific_windows_weight', default=False,
+                            help='the weight of specific_windows')
+        parser.add_argument('specific_days_off_weight', default=False,
+                            help='the weight of specific_days_off')
+        parser.add_argument('specific_lecturer_weight', default=False,
+                            help='the weight of specific_lecturer')
         args = parser.parse_args()
         #courses fix
         if args['courses']:
@@ -212,10 +218,10 @@ class Start_GA(Resource):
             specific_days_off = args['specific_days_off'][0].split(' ')
             args['specific_days_off'] = specific_days_off
             print(args['specific_days_off'])
-
         ret = []
         solutions = run(args['courses'], args['cluster'], args['specific_windows'], args['specific_days_off'],
-                        args['lecturer'])
+                        args['lecturer'], int(args['specific_windows_weight']),int(args['specific_days_off_weight']),
+                        int(args['specific_lecturer_weight']))
         for sol in solutions:
             classes = []
             for clas in sol.lectures:

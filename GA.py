@@ -114,10 +114,10 @@ class GA:
             i+=14
         fitness_scores.sort()
         self.fitness_history.append(fitness_scores)
-        print (self.fitness_history)
 
 
-def run(courses,clusters,specific_windows,specific_days_off,lecturers):
+
+def run(courses,clusters,specific_windows,specific_days_off,lecturers,specific_windows_weight,specific_days_off_weight,specific_lecturer_weight):
     """
     example run(['11231','61992','11102'],[['61958', '11102'],['61963','61964','61965']],['(0,2)', '(1,2)', '(2,2)', '(3,2)', '(4,2)'],['0', '2', '4'],['(11102,practice,"דר אדר רון")'])
 
@@ -129,10 +129,29 @@ def run(courses,clusters,specific_windows,specific_days_off,lecturers):
                              like so (61132,practice,"שגיא אריאלי"), this should only be used for courses and not clusters)
     :return:
     """
-    print('courses = ' +str(courses) + ' clusters = ' + str(clusters) + ' specific_windows = ' + str(specific_windows) + ' specific_days_off = ' + str(specific_days_off) + ' lecturers = ' + str(lecturers))
+    print('courses = ' +str(courses) + ' clusters = ' + str(clusters) + ' specific_windows = ' + str(specific_windows) + ' specific_days_off = ' + str(specific_days_off) + ' lecturers = ' + str(lecturers) +  ' windows_weight = ' + str(specific_windows_weight) +' specific_days_off_weight = ' + str(specific_days_off_weight) + ' specific_lecturer_weight = ' + str(specific_lecturer_weight) )
     TableObjective.specific_windows = specific_windows
     TableObjective.specific_free_days = specific_days_off
     TableObjective.lecturers = lecturers
+    if specific_windows_weight:
+        TableObjective.specific_windows_weight = specific_windows_weight
+    if specific_days_off_weight:
+        TableObjective.spesific_days_off_weight = specific_days_off_weight
+    if specific_lecturer_weight:
+        TableObjective.specific_lecturers_weight = specific_lecturer_weight
+
+    TableObjective.panelty_weight = max(TableObjective.spesific_days_off_weight,
+                                        TableObjective.specific_lecturers_weight,
+                                        TableObjective.specific_windows_weight)*2
+
+
+    TableObjective.max_objective = 5 * TableObjective.spesific_days_off_weight + \
+                                   20 * TableObjective.specific_windows_weight + \
+                                   TableObjective.specific_lecturers_weight * 5 + TableObjective.panelty_weight * 7
+
+    print('weights = ' + ' days off : ' + str(TableObjective.spesific_days_off_weight) + ' windows : '
+          + str(TableObjective.specific_windows_weight) + ' lecturers : ' + str(TableObjective.specific_lecturers_weight) + ' overlaps : ' + str(TableObjective.panelty_weight))
+
     courses, clusters = load_courses.Classes().run(courses,clusters)
     structure = courses + clusters
 
@@ -150,6 +169,7 @@ def run(courses,clusters,specific_windows,specific_days_off,lecturers):
                 results.append(genetic_algo.curent_generation[i])
                 count+=1
         i-=1
+    print (GA.fitness_history)
     return (results)
 
 if __name__ == "__main__":
