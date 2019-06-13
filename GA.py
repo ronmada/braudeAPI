@@ -77,7 +77,7 @@ class GA:
                 # can add second baby and make them fight over survival
                 self.curent_generation[replacment_counter] = first_baby
                 replacment_counter+=1
-        print('amount of crossovers = '+str(replacment_counter))
+        #print('amount of crossovers = '+str(replacment_counter))
 
     def mutation(self):
         replacment_counter=0
@@ -87,7 +87,7 @@ class GA:
             if pick > self.mutation_rate:
                 solution.mutation()
                 replacment_counter+=1
-        print('amount of mutations = ' + str(replacment_counter))
+        #print('amount of mutations = ' + str(replacment_counter))
 
 
     def create_first_generation(self):
@@ -164,10 +164,13 @@ def run(courses,clusters,specific_windows,specific_days_off,lecturers,specific_w
     count =1
     results = [genetic_algo.curent_generation[i]]
     while i>0 and count<3:
+        diffrent = True
         for res in results:
-            if (res.lectures != genetic_algo.curent_generation[i].lectures):
-                results.append(genetic_algo.curent_generation[i])
-                count+=1
+            if (res.lectures == genetic_algo.curent_generation[i].lectures):
+                diffrent = False
+        if diffrent:
+            results.append(genetic_algo.curent_generation[i])
+            count+=1
         i-=1
     print (GA.fitness_history)
     return (results)
