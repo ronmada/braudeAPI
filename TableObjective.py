@@ -190,7 +190,6 @@ class TableObjective(Objective):
                 lecturer_perfs.append(Utils.string_to_int_tuple(item))
             for t in lecturer_perfs:
                 c_id,c_type,name=t
-                print ('ahahahahahahhahah : ' + str(c_id)+'|||'+ str(c_type)+'|||'+str(name))
                 for lesson in self.solution.lectures:
                     if c_id.strip() == lesson.c_id.strip() and c_type.strip() == lesson.type.strip():
                         if len(name.split(' ')) >= 3:
