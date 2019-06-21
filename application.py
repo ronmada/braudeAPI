@@ -218,6 +218,10 @@ class Start_GA(Resource):
             specific_days_off = args['specific_days_off'][0].split(' ')
             args['specific_days_off'] = specific_days_off
             print(args['specific_days_off'])
+
+        if not args['lecturer']:
+            args['lecturer'] = []
+
         ret = []
         solutions = run(args['courses'], args['cluster'], args['specific_windows'], args['specific_days_off'],
                         args['lecturer'], int(args['specific_windows_weight']),int(args['specific_days_off_weight']),
