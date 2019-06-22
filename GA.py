@@ -142,7 +142,7 @@ def run(courses,clusters,specific_windows,specific_days_off,lecturers,specific_w
 
     TableObjective.panelty_weight = max(TableObjective.spesific_days_off_weight,
                                         TableObjective.specific_lecturers_weight,
-                                        TableObjective.specific_windows_weight)*2
+                                        TableObjective.specific_windows_weight)*3
 
 
     TableObjective.max_objective = 5 * TableObjective.spesific_days_off_weight + \
