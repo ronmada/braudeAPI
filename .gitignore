@@ -12,3 +12,4 @@ __pycache__/TableObjective.cpython-37.pyc
 .idea/workspace.xml
 *.xml
 
+*.pyc
