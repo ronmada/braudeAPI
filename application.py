@@ -182,6 +182,7 @@ class Start_GA(Resource):
         parser.add_argument('specific_windows', action='append', type=str, default=False,
                           help='for each specific window : add -spedific_window (day,period) like so (0,0) means:'
                                ' (yum aleph, 8:30-9:30)')
+
         parser.add_argument('specific_days_off', action='append', type=str, default=False,
                           help='for each specific day off add: -specific_days_off day1 day2... like so -specific_days_off 0 4')
         parser.add_argument('lecturer', action='append', type=str, default=False,
