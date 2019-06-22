@@ -49,7 +49,9 @@ class GA:
         self.document_generation_fitness()
         for _ in range(0,self.number_of_generations):
             self.selection()
+            self.curent_generation.sort(key=lambda x: x.score)
             self.crossover()
+            self.curent_generation.sort(key=lambda x: x.score)
             self.mutation()
             self.document_generation_fitness()
 
@@ -66,7 +68,7 @@ class GA:
 
     def crossover(self):
         replacment_counter=0
-        for solution in self.curent_generation:
+        for solution in self.curent_generation[:-1]:
             # pick number from [0.0,1.0)
             pick = random.random()
             if pick>self.crossover_rate:
@@ -81,7 +83,7 @@ class GA:
 
     def mutation(self):
         replacment_counter=0
-        for solution in self.curent_generation:
+        for solution in self.curent_generation[:-1]:
             # pick number from [0.0,1.0)
             pick = random.random()
             if pick > self.mutation_rate:
@@ -158,7 +160,7 @@ def run(courses,clusters,specific_windows,specific_days_off,lecturers,specific_w
     TableSolution.structure = structure
     # setup end
 
-    genetic_algo = GA(TableSolution, TableObjective, 30, 50, 0.5, 0.3)
+    genetic_algo = GA(TableSolution, TableObjective, 50, 50, 0.4, 0.4)
     genetic_algo.start()
     i=genetic_algo.generation_size-1
     count =1
@@ -166,7 +168,7 @@ def run(courses,clusters,specific_windows,specific_days_off,lecturers,specific_w
     while i>0 and count<3:
         diffrent = True
         for res in results:
-            if (res.lectures == genetic_algo.curent_generation[i].lectures):
+            if (res.score == genetic_algo.curent_generation[i].score):
                 diffrent = False
         if diffrent:
             results.append(genetic_algo.curent_generation[i])
