@@ -158,7 +158,7 @@ def run(courses,clusters,specific_windows,specific_days_off,lecturers,specific_w
     TableSolution.structure = structure
     # setup end
 
-    genetic_algo = GA(TableSolution, TableObjective, 30, 50, 0.5, 0)
+    genetic_algo = GA(TableSolution, TableObjective, 30, 50, 0.5, 0.3)
     genetic_algo.start()
     i=genetic_algo.generation_size-1
     count =1
