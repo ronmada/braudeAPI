@@ -15,9 +15,9 @@ class TableObjective(Objective):
     specific_windows = False
     specific_free_days = False
     lecturers = False
-    panelty_weight = 6
-    free_days_weight = 4
-    spesific_days_off_weight = 5
+    panelty_weight = 12
+    free_days_weight = 6
+    spesific_days_off_weight = 8
     specific_windows_weight = 2
     specific_lecturers_weight = 3
 

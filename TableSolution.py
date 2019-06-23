@@ -283,7 +283,8 @@ class TableSolution(Solution):
         3. cluster - the cluster id
         :param item: course
         """
-
+        if (len(item.groups)<1):
+            return
         group = random.choice(item.groups)
         if len(group.lectures)>0:
             lect = random.choice(group.lectures)

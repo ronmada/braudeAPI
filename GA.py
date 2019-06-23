@@ -12,6 +12,7 @@ from TableSolution import TableSolution
 from TableObjective import TableObjective
 from TableObjective import TableObjective
 from AbsGAClasses import Solution,Objective
+import copy
 
 """
 abstract classes for Objective and Solution allows for scalability, we can mix different types of objective methods and 
@@ -22,11 +23,20 @@ we can use the same inputs of a few implementations for many time and compare th
 to the optimal solution. 
 """
 
+
+generations = 50
+gen_size = 30
+crossover_rate = 0.6
+mutation_rate = 0.3
+
+
 class GA:
 
     #fitness_history is an array of arrays, each array contains the scores of a generation
     fitness_history=[]
     curent_generation=[]
+    max_sol=None
+    max_sol_score=0
 
 
     def __init__(self,create_solution_method,create_objective_method,generation_size,number_of_generations,mutation_rate,crossover_rate):
@@ -49,26 +59,58 @@ class GA:
         self.document_generation_fitness()
         for _ in range(0,self.number_of_generations):
             self.selection()
+
             self.curent_generation.sort(key=lambda x: x.score)
+            #print('post selection ' + str(self.curent_generation[-1].score))
+
             self.crossover()
+
             self.curent_generation.sort(key=lambda x: x.score)
+            #print('post crossover ' + str(self.curent_generation[-1].score))
+
             self.mutation()
+
+            self.curent_generation.sort(key=lambda x: x.score)
+            #print('post mutation ' + str(self.curent_generation[-1].score))
+
             self.document_generation_fitness()
+
+            self.curent_generation.sort(key=lambda x: x.score)
+            #print('post documentation ' + str(self.curent_generation[-1].score))
+            #print('--------')
+
+
+        # long live the king
+        #self.curent_generation.append(self.max_sol)
+        #self.curent_generation.sort(key=lambda x: x.score)
+
+
+
+    def copy(self,solution):
+        new_lect = []
+        for lect in solution.lectures:
+            new_lect.append(lect)
+        new = self.create_solution_method(lectures = new_lect)
+        self.link_solution_to_objective(new)
+        new.score = new.objective.evaluation()
+        return new
 
     def selection(self):
         survivors = []
         self.curent_generation.sort(key=lambda x: x.score)
         for _ in range(0,len(self.curent_generation)-1):
-            survivors.append(Utils.decision(self.curent_generation))
+            survivors.append(self.copy(Utils.decision(self.curent_generation)))
 
         #long live the king:
-        survivors.append(self.curent_generation[len(self.curent_generation)-1])
+        survivors.append(self.copy(self.curent_generation[-1]))
+
 
         self.curent_generation = survivors
 
+
     def crossover(self):
         replacment_counter=0
-        for solution in self.curent_generation[:-1]:
+        for solution in self.curent_generation[:-2]:
             # pick number from [0.0,1.0)
             pick = random.random()
             if pick>self.crossover_rate:
@@ -83,13 +125,20 @@ class GA:
 
     def mutation(self):
         replacment_counter=0
-        for solution in self.curent_generation[:-1]:
+        for solution in self.curent_generation[:-2]:
             # pick number from [0.0,1.0)
             pick = random.random()
             if pick > self.mutation_rate:
                 solution.mutation()
                 replacment_counter+=1
+                self.link_solution_to_objective(solution)
+                solution.score = solution.objective.evaluation()
         #print('amount of mutations = ' + str(replacment_counter))
+
+        for solution in self.curent_generation:
+            self.link_solution_to_objective(solution)
+            solution.score = solution.objective.evaluation()
+
 
 
     def create_first_generation(self):
@@ -99,23 +148,20 @@ class GA:
         for _ in range(0,self.generation_size):
             solution = self.create_solution_method()
             self.link_solution_to_objective(solution)
+            solution.score = solution.objective.evaluation()
             self.curent_generation.append(solution)
 
     def document_generation_fitness(self):
 
         fitness_scores=[]
         for solution in self.curent_generation:
-            solution.score = solution.objective.evaluation()
-
-
-        self.curent_generation.sort(key=lambda x: x.score)
-        i = 0
-        for solution in self.curent_generation:
             fitness_scores.append(solution.score)
             #print(str(solution.objective.string_fitness_paramenters()))
-            i+=14
         fitness_scores.sort()
         self.fitness_history.append(fitness_scores)
+        #if self.curent_generation[-1].score > self.max_sol_score:
+        #    self.max_sol_score = self.curent_generation[-1].score
+        #    self.max_sol = copy.deepcopy(self.curent_generation[-1])
 
 
 
@@ -160,21 +206,35 @@ def run(courses,clusters,specific_windows,specific_days_off,lecturers,specific_w
     TableSolution.structure = structure
     # setup end
 
-    genetic_algo = GA(TableSolution, TableObjective, 30, 50, 0.3, 0.3)
+    genetic_algo = GA(TableSolution, TableObjective, gen_size, generations, mutation_rate,crossover_rate)
     genetic_algo.start()
-    i=genetic_algo.generation_size-1
+    i=len(genetic_algo.curent_generation)-1
     count =1
     results = [genetic_algo.curent_generation[i]]
     while i>0 and count<3:
         diffrent = True
         for res in results:
-            if (res.lectures == genetic_algo.curent_generation[i].lectures):
+            if (res.score == genetic_algo.curent_generation[i].score):
                 diffrent = False
         if diffrent:
             results.append(genetic_algo.curent_generation[i])
             count+=1
         i-=1
     print (GA.fitness_history)
+    avgs = []
+    maxs= []
+    for gen in GA.fitness_history:
+        maxs.append(max(gen))
+        avg = 0
+        for score in gen:
+            avg += score
+        avg = avg/generations
+        avgs.append(avg)
+    print ('avgs = ' + str(avgs) )
+    print ('maxs = ' + str(maxs))
+
+
+
     return (results)
 
 if __name__ == "__main__":
