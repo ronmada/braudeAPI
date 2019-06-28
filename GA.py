@@ -13,6 +13,7 @@ from TableObjective import TableObjective
 from TableObjective import TableObjective
 from AbsGAClasses import Solution,Objective
 import copy
+import zip
 
 """
 abstract classes for Objective and Solution allows for scalability, we can mix different types of objective methods and 
