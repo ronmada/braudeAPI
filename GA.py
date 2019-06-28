@@ -13,7 +13,6 @@ from TableObjective import TableObjective
 from TableObjective import TableObjective
 from AbsGAClasses import Solution,Objective
 import copy
-import zip
 
 """
 abstract classes for Objective and Solution allows for scalability, we can mix different types of objective methods and 
@@ -239,17 +238,18 @@ def run(courses,clusters,specific_windows,specific_days_off,lecturers,specific_w
     return (results)
 
 def compare_lessons(first,second):
-    for lect_one,lect_tow in zip(first,second):
-        if lect_one.day_in_week != lect_tow.day_in_week:
-            return False
-        if lect_one.start_time != lect_tow.start_time:
-            return False
-        if lect_one.end_time != lect_tow.end_time:
-            return False
-        if lect_one.lecturer != lect_tow.lecturer:
-            return False
-        if lect_one.location != lect_tow.location:
-            return False
+    for kita_one,kita_tow in zip(first.lectures,second.lectures):
+        for lect_one, lect_tow in zip(kita_one.lectures, kita_tow.lectures):
+            if lect_one.day_in_week != lect_tow.day_in_week:
+                return False
+            if lect_one.start_time != lect_tow.start_time:
+                return False
+            if lect_one.end_time != lect_tow.end_time:
+                return False
+            if lect_one.lecturer != lect_tow.lecturer:
+                return False
+            if lect_one.location != lect_tow.location:
+                return False
     return True
 
 if __name__ == "__main__":
