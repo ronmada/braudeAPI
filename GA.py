@@ -214,7 +214,7 @@ def run(courses,clusters,specific_windows,specific_days_off,lecturers,specific_w
     while i>0 and count<3:
         diffrent = True
         for res in results:
-            if (res.score == genetic_algo.curent_generation[i].score):
+            if  compare_lessons(res,genetic_algo.curent_generation[i]):
                 diffrent = False
         if diffrent:
             results.append(genetic_algo.curent_generation[i])
@@ -236,6 +236,20 @@ def run(courses,clusters,specific_windows,specific_days_off,lecturers,specific_w
 
 
     return (results)
+
+def compare_lessons(first,second):
+    for lect_one,lect_tow in zip(first,second):
+        if lect_one.day_in_week != lect_tow.day_in_week:
+            return False
+        if lect_one.start_time != lect_tow.start_time:
+            return False
+        if lect_one.end_time != lect_tow.end_time:
+            return False
+        if lect_one.lecturer != lect_tow.lecturer:
+            return False
+        if lect_one.location != lect_tow.location:
+            return False
+    return True
 
 if __name__ == "__main__":
     args = Utils.parse_args()
