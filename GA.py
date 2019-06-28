@@ -25,9 +25,9 @@ to the optimal solution.
 
 
 generations = 50
-gen_size = 30
-crossover_rate = 0.6
-mutation_rate = 0.3
+gen_size = 50
+crossover_rate = 0.7
+mutation_rate = 0.5
 
 
 class GA:
