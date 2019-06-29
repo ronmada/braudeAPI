@@ -30,11 +30,6 @@ def root():
 def page_not_found(e):
     return send_from_directory('./dist', 'index.html')
 
-'''
-@app.route('/')
-def index():
-    return "Hello, Worlds@@!"
-'''
 
 
 @app.errorhandler(500)
@@ -47,68 +42,6 @@ class HelloWorld(Resource):
         return {'hello': 'world'}
 
 api.add_resource(HelloWorld, '/rere')
-
-
-'''
-class Todo(Resource):
-    def get(self, todo_id):
-        abort_if_todo_doesnt_exist(todo_id)
-        return TODOS[todo_id]
-
-    def delete(self, todo_id):
-        abort_if_todo_doesnt_exist(todo_id)
-        del TODOS[todo_id]
-        return '', 204
-
-    def put(self, todo_id):
-        parser.add_argument("task")
-        args = parser.parse_args()
-        print(args)
-        task = {'task': args['task']}
-        TODOS[todo_id] = task
-        return task, 201
-
-
-api.add_resource(Todo, '/todos/<todo_id>')
-'''
-
-'''
-class Post_one(Resource):
-    def post(self):
-        parser.add_argument("name")
-        parser.add_argument("age", type=int)
-        args = parser.parse_args()
-        myquery = ({"name": "something11", "age": 22})
-        print(args.name)
-        print("age:" + str(args.age))
-        newvalues = {"$set": {"name": args.name, "age": args.age}}
-        print(newvalues)
-        x = mycol.update_one(myquery, newvalues)
-        print("Status Msg:" + str(x))
-        return "Okay"
-
-
-api.add_resource(Post_one, '/postto')
-'''
-'''
-class Put_one(Resource):
-    def put(self,name_id):
-        parser.add_argument("name")
-        parser.add_argument("age",type=int)
-        args = parser.parse_args()
-        x = abortif(name_id)
-        print("SOURCE:" + str(x))
-        dest_ = { "$set": { "name":args.name ,"age":args.age} }
-        print("DEST:" + str(dest_))
-        y=mycol.update_one(x,dest_)
-        print(y)
-        z=int(mycol.count_documents({"name": args.name,"age":args.age }))
-        print("Num of Docs:" + str(z))
-        final_= mycol.find_one({"name":args.name, "age":args.age },{"_id" : 0})
-        return jsonify(final_)
-
-api.add_resource(Put_one, '/putto/<name_id>')
-'''
 
 
 class insertDocs(Resource):

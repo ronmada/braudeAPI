@@ -2,7 +2,7 @@ from GADS import Course,Course_Group,Kita,Lect,Cluster
 from flask_restful import  abort
 import copy , argparse , pymongo ,json
 
-uri = "mongodb://ronsagi:aGhDWNKX0QWEriojd9mG9y7zB0vZNQ79dBpnm6DrSkio3gndDMWSMvm4EMmqy1qmoE7bt38GMWxM6FuK0P3oJA==@ronsagi.documents.azure.com:10255/?ssl=true&replicaSet=globaldb"
+uri = "mongodb://sagi-ron-db:V9YEv49oFLGNEYkVDT0hcYodsYHIhsGcumNuyppyWzP0HojUTqQuboe9DXhbqEMRU1JQlvl0NFoBy09AeicdbA==@sagi-ron-db.documents.azure.com:10255/?ssl=true&replicaSet=globaldb"
 client = pymongo.MongoClient(uri)
 
 db = client['adata']
@@ -83,7 +83,7 @@ def decodejson(self,courseobj):
 
 def insert_docs():
     print("INSERTING")
-    with open('all_courses_final.json', 'r') as f:
+    with open('all_courses_final_edition.json', 'r') as f:
         datastore = json.load(f)
     datastore_copy = copy.deepcopy(datastore)
     print("Total number of documents found before insertion:" + str(mycorcl.count()))
