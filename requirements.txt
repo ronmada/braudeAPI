@@ -7,6 +7,6 @@ Werkzeug==0.14.1
 PyMongo==3.8.0
 flask-pymongo==2.2
 flask_restful==0.3.7
-prettytable==0.7
+prettytable==0.7.1
 XlsxWriter==1.1.7
 flask-cors==3.0.7
