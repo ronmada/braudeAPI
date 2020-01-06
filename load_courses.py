@@ -2,11 +2,22 @@ from GADS import Course,Course_Group,Kita,Lect,Cluster
 from flask_restful import  abort
 import copy , argparse , pymongo ,json
 
-uri = "mongodb://sagi-ron-db:V9YEv49oFLGNEYkVDT0hcYodsYHIhsGcumNuyppyWzP0HojUTqQuboe9DXhbqEMRU1JQlvl0NFoBy09AeicdbA==@sagi-ron-db.documents.azure.com:10255/?ssl=true&replicaSet=globaldb"
+### old DB
+#uri = "mongodb://sagi-ron-db:V9YEv49oFLGNEYkVDT0hcYodsYHIhsGcumNuyppyWzP0HojUTqQuboe9DXhbqEMRU1JQlvl0NFoBy09AeicdbA==@sagi-ron-db.documents.azure.com:10255/?ssl=true&replicaSet=globaldb"
+
+
+uri = "mongodb://ronsagi:arvanbv@mongostorage-shard-00-00-gtsfh.azure.mongodb.net:27017,mongostorage-shard-00-01-gtsfh.azure.mongodb.net:27017,mongostorage-shard-00-02-gtsfh.azure.mongodb.net:27017/test?ssl=true&replicaSet=mongoStorage-shard-0&authSource=admin&retryWrites=true&w=majority"
+
 client = pymongo.MongoClient(uri)
 
-db = client['adata']
-mycorcl = db["coursescol"]
+### OLD DB INFO
+
+#db = client['adata']
+#mycorcl = db["coursescol"]
+
+
+db = client['db']
+mycorcl = db["courses"]
 
 class Classes:
 
