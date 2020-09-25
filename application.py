@@ -5,7 +5,7 @@ import load_courses
 from flask_cors import CORS
 from Utils import parse_args
 from TableSolution import TableSolution
-
+#hello
 # to run app from POWERSHELL:
 # Set-Item Env:FLASK_APP ".\application.py"
 # flask run
