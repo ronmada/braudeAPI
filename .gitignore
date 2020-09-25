@@ -13,3 +13,4 @@ __pycache__/TableObjective.cpython-37.pyc
 *.xml
 
 *.pyc
+__pycache__
