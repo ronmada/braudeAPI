@@ -6,8 +6,8 @@ import copy , argparse , pymongo ,json
 #uri = "mongodb://sagi-ron-db:V9YEv49oFLGNEYkVDT0hcYodsYHIhsGcumNuyppyWzP0HojUTqQuboe9DXhbqEMRU1JQlvl0NFoBy09AeicdbA==@sagi-ron-db.documents.azure.com:10255/?ssl=true&replicaSet=globaldb"
 
 
-uri = "mongodb://ronsagi:arvanbv@mongostorage-shard-00-00-gtsfh.azure.mongodb.net:27017,mongostorage-shard-00-01-gtsfh.azure.mongodb.net:27017,mongostorage-shard-00-02-gtsfh.azure.mongodb.net:27017/test?ssl=true&replicaSet=mongoStorage-shard-0&authSource=admin&retryWrites=true&w=majority"
-
+# uri = "mongodb://ronsagi:arvanbv@mongostorage-shard-00-00-gtsfh.azure.mongodb.net:27017,mongostorage-shard-00-01-gtsfh.azure.mongodb.net:27017,mongostorage-shard-00-02-gtsfh.azure.mongodb.net:27017/test?ssl=true&replicaSet=mongoStorage-shard-0&authSource=admin&retryWrites=true&w=majority"
+uri = "mongodb://Ron_Wexler:crQ84EASijZixPg5@bookhotelapp.skjso.mongodb.net/?retryWrites=true&w=majority"
 client = pymongo.MongoClient(uri)
 
 ### OLD DB INFO
@@ -16,7 +16,10 @@ client = pymongo.MongoClient(uri)
 #mycorcl = db["coursescol"]
 
 
-db = client['db']
+# db = client['db']
+# mycorcl = db["courses"]
+
+db = client['braudeProj']
 mycorcl = db["courses"]
 
 class Classes:
