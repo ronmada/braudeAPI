@@ -15,8 +15,8 @@ api = Api(app)
 
 
 parser = reqparse.RequestParser()
-if __name__ == '__main__':
-    app.run()
+# if __name__ == '__main__':
+#     app.run()
 
 @app.route('/<path:path>', methods=['GET'])
 def static_proxy(path):
