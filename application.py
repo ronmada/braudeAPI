@@ -9,31 +9,29 @@ from TableSolution import TableSolution
 # to run app from POWERSHELL:
 # Set-Item Env:FLASK_APP ".\application.py"
 # flask run
-app = Flask(__name__)
-CORS(app)
-api = Api(app)
+application = Flask(__name__)
+CORS(application)
+api = Api(application)
 
 
 parser = reqparse.RequestParser()
-# if __name__ == '__main__':
-#     app.run()
 
-@app.route('/<path:path>', methods=['GET'])
+@application.route('/<path:path>', methods=['GET'])
 def static_proxy(path):
     return send_from_directory('./dist', path)
 
 
-@app.route('/')
+@application.route('/')
 def root():
     return send_from_directory('./dist', 'index.html')
 
-@app.errorhandler(404)
+@application.errorhandler(404)
 def page_not_found(e):
     return send_from_directory('./dist', 'index.html')
 
 
 
-@app.errorhandler(500)
+@application.errorhandler(500)
 def server_error(e):
     return 'An internal error occurred [application.py] %s' % e, 500
 
@@ -197,3 +195,5 @@ class Start_GA(Resource):
         return jsonify(json_res)
 
 api.add_resource(Start_GA, '/start_ga')
+if __name__ == '__main__':
+    application.run()

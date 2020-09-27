@@ -7,9 +7,9 @@ import copy , argparse , pymongo ,json
 
 
 # uri = "mongodb://ronsagi:arvanbv@mongostorage-shard-00-00-gtsfh.azure.mongodb.net:27017,mongostorage-shard-00-01-gtsfh.azure.mongodb.net:27017,mongostorage-shard-00-02-gtsfh.azure.mongodb.net:27017/test?ssl=true&replicaSet=mongoStorage-shard-0&authSource=admin&retryWrites=true&w=majority"
-uri = "mongodb://Ron_Wexler:crQ84EASijZixPg5@bookhotelapp.skjso.mongodb.net/?retryWrites=true&w=majority"
-client = pymongo.MongoClient(uri)
-
+# uri = "mongodb://Ron_Wexler:kYDSOXCpEl9Z6o3K@bookhotelapp.skjso.mongodb.net/?retryWrites=true&w=majority"
+client = pymongo.MongoClient("mongodb://Ron_Wexler:kYDSOXCpEl9Z6o3K@bookhotelapp-shard-00-00.skjso.mongodb.net:27017,bookhotelapp-shard-00-01.skjso.mongodb.net:27017,bookhotelapp-shard-00-02.skjso.mongodb.net:27017/braudeProj?ssl=true&replicaSet=atlas-2e01ev-shard-0&authSource=admin&retryWrites=true&w=majority")
+# client = pymongo.MongoClient(uri)
 ### OLD DB INFO
 
 #db = client['adata']
